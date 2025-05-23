@@ -1,0 +1,20 @@
+{
+
+  "variants" : {
+    "facing=north": {
+      "model": "ags_modernmarkings:wall_marking_symbol_laser"
+    },
+    "facing=south": {
+      "model": "ags_modernmarkings:wall_marking_symbol_laser",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "ags_modernmarkings:wall_marking_symbol_laser",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "ags_modernmarkings:wall_marking_symbol_laser",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "W  ",
+    "   ",
+    "   "
+  ],
+  "key": {
+    "W": {
+      "item": "ags_modernmarkings:wall_marking_voltage_fe"
+    }
+  },
+  "result": {
+    "item": "ags_modernmarkings:wall_marking_voltage_rf",
+    "count": 1
+  }
+}

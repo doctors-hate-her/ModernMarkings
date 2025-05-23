@@ -1,0 +1,20 @@
+{
+
+  "variants" : {
+    "facing=north": {
+      "model": "ags_modernmarkings:floor_marking_white_double_arrow"
+    },
+    "facing=south": {
+      "model": "ags_modernmarkings:floor_marking_white_double_arrow",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "ags_modernmarkings:floor_marking_white_double_arrow",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "ags_modernmarkings:floor_marking_white_double_arrow",
+      "y": 270
+    }
+  }
+}

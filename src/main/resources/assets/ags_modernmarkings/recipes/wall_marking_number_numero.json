@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "W  ",
+    "   ",
+    "   "
+  ],
+  "key": {
+    "W": {
+      "item": "ags_modernmarkings:wall_marking_number_no"
+    }
+  },
+  "result": {
+    "item": "ags_modernmarkings:wall_marking_number_numero",
+    "count": 1
+  }
+}

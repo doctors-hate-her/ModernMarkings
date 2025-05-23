@@ -1,0 +1,20 @@
+{
+
+  "variants" : {
+    "facing=north": {
+      "model": "ags_modernmarkings:wall_marking_number_comma"
+    },
+    "facing=south": {
+      "model": "ags_modernmarkings:wall_marking_number_comma",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "ags_modernmarkings:wall_marking_number_comma",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "ags_modernmarkings:wall_marking_number_comma",
+      "y": 270
+    }
+  }
+}

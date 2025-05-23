@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "   ",
+    "   "
+  ],
+  "key": {
+    "W": {
+      "type": "forge:ore_dict",
+      "ore": "dyeWhite"
+    }
+  },
+  "result": {
+    "item": "ags_modernmarkings:floor_marking_white_singleline",
+    "count": 32
+  }
+}

@@ -1,0 +1,20 @@
+{
+
+  "variants" : {
+    "facing=north": {
+      "model": "ags_modernmarkings:wall_marking_number_period"
+    },
+    "facing=south": {
+      "model": "ags_modernmarkings:wall_marking_number_period",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "ags_modernmarkings:wall_marking_number_period",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "ags_modernmarkings:wall_marking_number_period",
+      "y": 270
+    }
+  }
+}

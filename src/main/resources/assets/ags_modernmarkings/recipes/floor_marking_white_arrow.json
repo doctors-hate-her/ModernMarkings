@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " W ",
+    "WLW",
+    "   "
+  ],
+  "key": {
+    "W": {
+      "item": "ags_modernmarkings:floor_marking_white_singleline"
+    },
+    "L": {
+      "item": "ags_modernmarkings:floor_marking_white_lane"
+    }
+  },
+  "result": {
+    "item": "ags_modernmarkings:floor_marking_white_arrow",
+    "count": 4
+  }
+}

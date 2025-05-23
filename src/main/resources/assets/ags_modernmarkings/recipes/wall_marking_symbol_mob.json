@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "WWW",
+    "   "
+  ],
+  "key": {
+    "W": {
+      "item": "ags_modernmarkings:wall_marking_symbol_chemical"
+    }
+  },
+  "result": {
+    "item": "ags_modernmarkings:wall_marking_symbol_mob",
+    "count": 6
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "  W",
+    " W "
+  ],
+  "key": {
+    "W": {
+      "item": "ags_modernmarkings:wall_marking_number_period"
+    }
+  },
+  "result": {
+    "item": "ags_modernmarkings:wall_marking_number_comma",
+    "count": 2
+  }
+}

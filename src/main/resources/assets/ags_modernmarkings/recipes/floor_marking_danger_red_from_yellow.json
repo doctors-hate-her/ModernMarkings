@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "R  ",
+    "   ",
+    "   "
+  ],
+  "key": {
+    "R": {
+      "item": "ags_modernmarkings:floor_marking_danger_yellow"
+    }
+  },
+  "result": {
+    "item": "ags_modernmarkings:floor_marking_danger_red",
+    "count": 1
+  }
+}

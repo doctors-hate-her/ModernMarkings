@@ -1,0 +1,20 @@
+{
+
+  "variants" : {
+    "facing=north": {
+      "model": "ags_modernmarkings:floor_marking_yellow_sideline"
+    },
+    "facing=south": {
+      "model": "ags_modernmarkings:floor_marking_yellow_sideline",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "ags_modernmarkings:floor_marking_yellow_sideline",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "ags_modernmarkings:floor_marking_yellow_sideline",
+      "y": 270
+    }
+  }
+}

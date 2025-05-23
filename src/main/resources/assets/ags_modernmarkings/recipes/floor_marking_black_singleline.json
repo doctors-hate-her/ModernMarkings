@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "W  ",
+    "   ",
+    "   "
+  ],
+  "key": {
+    "W": {
+      "item": "ags_modernmarkings:floor_marking_white_singleline"
+    }
+  },
+  "result": {
+    "item": "ags_modernmarkings:floor_marking_black_singleline",
+    "count": 1
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WW ",
+    "WW ",
+    "   "
+  ],
+  "key": {
+    "W": {
+      "item": "ags_modernmarkings:wall_marking_voltage_umv"
+    }
+  },
+  "result": {
+    "item": "ags_modernmarkings:wall_marking_voltage_uxv",
+    "count": 4
+  }
+}

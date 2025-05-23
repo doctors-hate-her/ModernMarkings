@@ -1,0 +1,23 @@
+{
+	"credit": "Made with Blockbench",
+	"render_type": "minecraft:cutout",
+	"textures": {
+		"1": "ags_modernmarkings:blocks/marking_danger_yellow",
+		"particle": "ags_modernmarkings:blocks/marking_danger_yellow"
+	},
+	"elements": [
+		{
+			"from": [0, 0.1, 0],
+			"to": [16, 0.1, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0.1, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 0], "texture": "#1"},
+				"east": {"uv": [0, 0, 16, 0], "texture": "#1"},
+				"south": {"uv": [0, 0, 16, 0], "texture": "#1"},
+				"west": {"uv": [0, 0, 16, 0], "texture": "#1"},
+				"up": {"uv": [16, 16, 0, 0], "texture": "#1"},
+				"down": {"uv": [16, 0, 0, 16], "texture": "#1"}
+			}
+		}
+	]
+}

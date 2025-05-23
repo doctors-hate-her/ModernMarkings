@@ -1,0 +1,20 @@
+{
+
+  "variants" : {
+    "facing=north": {
+      "model": "ags_modernmarkings:wall_marking_voltage_max"
+    },
+    "facing=south": {
+      "model": "ags_modernmarkings:wall_marking_voltage_max",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "ags_modernmarkings:wall_marking_voltage_max",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "ags_modernmarkings:wall_marking_voltage_max",
+      "y": 270
+    }
+  }
+}

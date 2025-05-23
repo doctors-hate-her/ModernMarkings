@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WW ",
+    "   ",
+    "   "
+  ],
+  "key": {
+    "W": {
+      "item": "ags_modernmarkings:wall_marking_symbol_gears"
+    }
+  },
+  "result": {
+    "item": "ags_modernmarkings:wall_marking_symbol_production",
+    "count": 2
+  }
+}

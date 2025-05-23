@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " W ",
+    "WWW",
+    " W "
+  ],
+  "key": {
+    "W": {
+      "item": "ags_modernmarkings:floor_marking_white_lane"
+    }
+  },
+  "result": {
+    "item": "ags_modernmarkings:floor_marking_white_lane_cross",
+    "count": 5
+  }
+}

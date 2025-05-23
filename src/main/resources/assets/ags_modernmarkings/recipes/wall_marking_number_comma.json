@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  W",
+    "  W",
+    "  W"
+  ],
+  "key": {
+    "W": {
+      "type": "forge:ore_dict",
+      "ore": "dyeWhite"
+    }
+  },
+  "result": {
+    "item": "ags_modernmarkings:wall_marking_number_period",
+    "count": 32
+  }
+}

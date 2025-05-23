@@ -1,0 +1,16 @@
+[
+{
+  "modid": "ags_modernmarkings",
+  "name": "AGS ModernMarkings Mod",
+  "description": "base Mod needed for all basemod Mods!",
+  "version": "0.2",
+  "mcversion": "1.12.2",
+  "url": "https://github.com/sa-shiro/Minecraft-Forge-1.12.2-BaseMod",
+  "updateUrl": "",
+  "authorList": ["Sashiro","AminoGlycoSide148"],
+  "credits": "Sashiro",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
