@@ -28,7 +28,7 @@ import java.util.List;
 
 public class MarkingFloor extends BlockHorizontal implements IHasModel {
     public MarkingFloor(String name) {
-        super(Material.WOOD);
+        super(Material.CARPET);
 
         setTranslationKey(name);
         setRegistryName(Resource.MOD_ID, name);
