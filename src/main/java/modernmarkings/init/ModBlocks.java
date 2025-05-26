@@ -1,12 +1,13 @@
 package modernmarkings.init;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import net.minecraft.block.Block;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import modernmarkings.blocks.MarkingFloor;
 import modernmarkings.blocks.MarkingWall;
-import net.minecraft.block.Block;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ModBlocks {
 
@@ -15,9 +16,7 @@ public class ModBlocks {
      */
     public static final List<Block> BLOCKS = new ArrayList<>();
 
-    /**
-     * function to create new Blocks
-     */
+    // spotless:off
     public static final Block FLOOR_MARKING_BLACK_SINGLELINE = new MarkingFloor("floor_marking_black_singleline", "marking_black_singleline");
     public static final Block FLOOR_MARKING_BLUE_SINGLELINE = new MarkingFloor("floor_marking_blue_singleline", "marking_blue_singleline");
     public static final Block FLOOR_MARKING_DANGER_RED = new MarkingFloor("floor_marking_danger_red", "marking_danger_red");
@@ -97,17 +96,12 @@ public class ModBlocks {
     public static final Block WALL_MARKING_VOLTAGE_UV = new MarkingWall("wall_marking_voltage_uv", "marking_wall_voltage_uv");
     public static final Block WALL_MARKING_VOLTAGE_UXV = new MarkingWall("wall_marking_voltage_uxv", "marking_wall_voltage_uxv");
     public static final Block WALL_MARKING_VOLTAGE_ZPM = new MarkingWall("wall_marking_voltage_zpm", "marking_wall_voltage_zpm");
-    public static void registerBlocks(){
-        for(Block block : BLOCKS){
+    // spotless:on
+
+    public static void registerBlocks() {
+        for (Block block : BLOCKS) {
             GameRegistry.registerBlock(block, block.getLocalizedName());
         }
     }
-
-
-
-
-
-
-
 
 }

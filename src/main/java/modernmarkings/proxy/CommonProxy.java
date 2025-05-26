@@ -1,9 +1,9 @@
 package modernmarkings.proxy;
 
-import net.minecraft.item.Item;
-
 public class CommonProxy {
 
-    public void registerItemRenderer(Item item, int meta, String id) {
-    }
+    public int renderMarkingWallID = -1;
+    public int renderMarkingFloorID = -1;
+
+    public void initRenderers() {}
 }
