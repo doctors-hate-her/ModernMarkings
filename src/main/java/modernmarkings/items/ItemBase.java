@@ -1,10 +1,13 @@
-package modernmarkings.base.items;
+package modernmarkings.items;
 
-import modernmarkings.base.Base;
-import com.aminoglycoside.modernmarkings.base.init.ModItems;
-import com.aminoglycoside.modernmarkings.base.util.Resource;
-import com.aminoglycoside.modernmarkings.base.util.IHasModel;
+import modernmarkings.ModernMarkings;
+import modernmarkings.ModernMarkings;
+import modernmarkings.init.ModItems;
+import modernmarkings.util.Resource;
+import modernmarkings.util.IHasModel;
 import net.minecraft.item.Item;
+
+import static modernmarkings.ModernMarkings.CREATIVE_TAB;
 
 public class ItemBase extends Item implements IHasModel {
 
@@ -14,11 +17,11 @@ public class ItemBase extends Item implements IHasModel {
      */
     public ItemBase(String name) {
         /* Setting the Name of the Block / Item */
-        setTranslationKey(name);
+        //setTranslationKey(name);
         /* Setting the Registry Name of the Block / Item */
-        setRegistryName(Resource.MOD_ID, name);
+        //setRegistryName(Resource.MOD_ID, name);
         /* The Tab where the Item will be placed */
-        setCreativeTab(Base.MOD_TAB);
+        setCreativeTab(CREATIVE_TAB);
 
         ModItems.ITEMS.add(this);
     }
@@ -28,6 +31,6 @@ public class ItemBase extends Item implements IHasModel {
      */
     @Override
     public void registerModels() {
-        Base.proxy.registerItemRenderer(this, 0, "inventory");
+        ModernMarkings.proxy.registerItemRenderer(this, 0, "inventory");
     }
 }

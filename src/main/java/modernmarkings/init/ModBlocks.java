@@ -1,10 +1,8 @@
-package modernmarkings.base.init;
+package modernmarkings.init;
 
-import modernmarkings.base.blocks.BlockBase;
-import modernmarkings.base.blocks.MarkingFloor;
-import modernmarkings.base.blocks.MarkingWall;
+import modernmarkings.blocks.MarkingFloor;
+import modernmarkings.blocks.MarkingWall;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +12,7 @@ public class ModBlocks {
     /**
      * Storing all Mod Blocks in an Array List
      */
-    public static final List<Block> BLOCKS = new ArrayList<Block>();
+    public static final List<Block> BLOCKS = new ArrayList<>();
 
     /**
      * function to create new Blocks

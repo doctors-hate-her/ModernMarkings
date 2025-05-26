@@ -1,10 +1,9 @@
-package modernmarkings.base.init;
+package modernmarkings.init;
 
-import modernmarkings.base.util.Resource;
+import modernmarkings.util.Resource;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModTab extends CreativeTabs {
 
@@ -19,12 +18,8 @@ public class ModTab extends CreativeTabs {
         super(Resource.MOD_ID + "." + name);
     }
 
-    /**
-     * adding an Icon to the new Creative Tab
-     */
-    @SideOnly(Side.CLIENT)
     @Override
-    public ItemStack createIcon() {
-        return new ItemStack(ModItems.CHALK);
+    public Item getTabIconItem() {
+        return new ItemStack(ModItems.CHALK).getItem();
     }
 }

@@ -1,4 +1,4 @@
-package modernmarkings.base.proxy;
+package modernmarkings.proxy;
 
 import net.minecraft.item.Item;
 
