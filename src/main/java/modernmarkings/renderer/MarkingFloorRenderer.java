@@ -44,19 +44,20 @@ public class MarkingFloorRenderer implements ISimpleBlockRenderingHandler {
         // For a flat quad, we draw in the X-Y plane at Z=0.
         GL11.glPushMatrix();
         // Center the quad at the origin
-        GL11.glTranslatef(-0.5F, -0.5F, 0);
+        GL11.glTranslatef(0.1F, 0.5F, 0);
 
         // Draw a quad from (0,0) to (1,1)
-        tessellator.addVertexWithUV(0.0, 0.0, 0.0, uMin, vMax);
-        tessellator.addVertexWithUV(1.0, 0.0, 0.0, uMax, vMax);
-        tessellator.addVertexWithUV(1.0, 1.0, 0.0, uMax, vMin);
-        tessellator.addVertexWithUV(0.0, 1.0, 0.0, uMin, vMin);
+        tessellator.addVertexWithUV(0.0, 0.0, 0.0, uMin, vMin);
+        tessellator.addVertexWithUV(0.0, 0.0, 1.0, uMin, vMax);
+        tessellator.addVertexWithUV(1.0, 0.0, 1.0, uMax, vMax);
+        tessellator.addVertexWithUV(1.0, 0.0, 0.0, uMax, vMin);
 
         tessellator.draw();
         GL11.glPopMatrix();
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block, int modelId,
         RenderBlocks renderer) {
         int meta = world.getBlockMetadata(x, y, z);
@@ -70,6 +71,7 @@ public class MarkingFloorRenderer implements ISimpleBlockRenderingHandler {
 
         // Tell the renderer to use this icon when rendering.
         renderer.overrideBlockTexture = icon;
+        renderer.uvRotateTop = meta % 4;
         boolean rendered = renderer.renderStandardBlock(block, x, y, z);
         renderer.clearOverrideBlockTexture();
         return rendered;

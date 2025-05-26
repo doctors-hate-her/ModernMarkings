@@ -1,6 +1,9 @@
 package modernmarkings.blocks;
 
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 import cpw.mods.fml.relauncher.Side;
@@ -30,4 +33,36 @@ public class MarkingFloor extends BlockBase {
         // Return the custom render ID you registered in your client proxy.
         return ModernMarkings.proxy.renderMarkingFloorID;
     }
+
+    @Override
+    public void onBlockPlacedBy(World worldIn, int x, int y, int z, EntityLivingBase placer, ItemStack itemIn){
+
+        // Normalize rotationYaw to be within [0, 360)
+        float yaw = placer.rotationYaw % 360.0F;
+        if (yaw < 0.0F) {
+            yaw += 360.0F;
+        }
+
+        int rotation = MathHelper.floor_double((yaw * 4.0F / 360.0F) + 0.5D) & 3;
+        int meta = 0;
+        switch (rotation) {
+            case 0:
+                meta = 3;
+                break;
+            case 1:
+                meta = 2;
+                break;
+            case 2:
+                meta = 0;
+                break;
+            case 3:
+                meta = 1;
+                break;
+            default:
+                meta = 0;
+                break;
+        }
+        worldIn.setBlockMetadataWithNotify(x, y, z, meta, 2);
+    }
+
 }
