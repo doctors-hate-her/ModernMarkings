@@ -6,25 +6,24 @@ import modernmarkings.ModernMarkings;
 import modernmarkings.init.ModBlocks;
 import modernmarkings.init.ModItems;
 import modernmarkings.util.IHasModel;
+import modernmarkings.util.Resource;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.IIcon;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public class MarkingFloor extends Block implements IHasModel {
-    public MarkingFloor(String name) {
-        super(Material.carpet);
+public class MarkingFloor extends BlockBase implements IHasModel {
+    public String unlocalizedName;
+    private IIcon icon;
 
-        //setTranslationKey(name);
-        //setRegistryName(Resource.MOD_ID, name);
-        //setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
-
-        setCreativeTab(ModernMarkings.CREATIVE_TAB);
-
-        ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new ItemBlock(this));
+    public MarkingFloor(String name, String textureName) {
+        super(name, textureName);
+        setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 0.1f, 1.0f);
     }
 
     @SideOnly(Side.CLIENT)
@@ -34,20 +33,8 @@ public class MarkingFloor extends Block implements IHasModel {
     }
 
     @Override
-    public boolean isOpaqueCube()
-    {
-        return false;
-    }
-    @Override
     public AxisAlignedBB getCollisionBoundingBoxFromPool(World worldIn, int x, int y, int z)
     {
         return AxisAlignedBB.getBoundingBox(0,0,0,0,0,0);
     }
-
-
-    @Override
-    public void registerModels() {
-        ModernMarkings.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
-    }
-
 }
