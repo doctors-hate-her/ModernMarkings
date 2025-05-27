@@ -18,7 +18,7 @@ public class ModernMarkings {
 
     public static final String MODID = Resource.MOD_ID;
     public static final Logger LOG = LogManager.getLogger(MODID);
-    public static final ModTab CREATIVE_TAB = new ModTab("Modern Markings");
+    public static final ModTab CREATIVE_TAB = new ModTab("modernmarkings");
 
     @SidedProxy(
         clientSide = Resource.MOD_ID + ".proxy.ClientProxy",
