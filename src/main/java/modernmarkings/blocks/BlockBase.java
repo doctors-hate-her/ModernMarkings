@@ -14,15 +14,13 @@ import modernmarkings.init.ModItems;
 
 public class BlockBase extends Block {
 
-    public String unlocalizedName;
-
     private final String textureName;
     private IIcon icon;
 
     protected BlockBase(String name, String textureName) {
         super(Material.carpet);
-        this.unlocalizedName = name;
         this.textureName = textureName;
+        setBlockName(name);
 
         setCreativeTab(ModernMarkings.CREATIVE_TAB);
 
@@ -34,11 +32,6 @@ public class BlockBase extends Block {
     @Override
     public boolean isOpaqueCube() {
         return false;
-    }
-
-    @Override
-    public String getUnlocalizedName() {
-        return unlocalizedName;
     }
 
     @Override

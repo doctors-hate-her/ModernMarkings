@@ -15,19 +15,18 @@ import modernmarkings.init.ModItems;
 
 public class ItemBase extends Item {
 
-    private final String name;
     private final String textureName;
     private IIcon icon;
 
     /**
      * Creating the Base of a new Mod Item
-     * 
+     *
      * @param name Name for the Item
      */
     public ItemBase(String name, String textureName) {
-        this.name = name;
         this.textureName = textureName;
         setCreativeTab(CREATIVE_TAB);
+        setUnlocalizedName(name);
 
         ModItems.ITEMS.add(this);
     }

@@ -102,7 +102,7 @@ public class ModBlocks {
 
     public static void registerBlocks() {
         for (Block block : BLOCKS) {
-            GameRegistry.registerBlock(block, block.getLocalizedName());
+            GameRegistry.registerBlock(block, block.getUnlocalizedName());
         }
     }
 
