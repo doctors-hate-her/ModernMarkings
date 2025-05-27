@@ -1,5 +1,7 @@
 package modernmarkings.blocks;
 
+import static modernmarkings.init.ModBlocks.FLOOR_BLOCKS;
+
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
@@ -14,6 +16,7 @@ public class MarkingFloor extends BlockBase {
 
     public MarkingFloor(String name, String textureName) {
         super(name, textureName);
+        FLOOR_BLOCKS.add(this);
         setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 0.0001f, 1.0f);
     }
 
@@ -35,7 +38,7 @@ public class MarkingFloor extends BlockBase {
     }
 
     @Override
-    public void onBlockPlacedBy(World worldIn, int x, int y, int z, EntityLivingBase placer, ItemStack itemIn){
+    public void onBlockPlacedBy(World worldIn, int x, int y, int z, EntityLivingBase placer, ItemStack itemIn) {
 
         // Normalize rotationYaw to be within [0, 360)
         float yaw = placer.rotationYaw % 360.0F;

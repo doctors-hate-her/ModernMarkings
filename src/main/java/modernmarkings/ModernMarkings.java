@@ -9,6 +9,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import modernmarkings.init.ModBlocks;
 import modernmarkings.init.ModItems;
 import modernmarkings.init.ModTab;
+import modernmarkings.items.ModRecipes;
 import modernmarkings.proxy.CommonProxy;
 import modernmarkings.util.Resource;
 
@@ -30,6 +31,7 @@ public class ModernMarkings {
     public void preInit(FMLPreInitializationEvent event) {
         ModItems.registerItems();
         ModBlocks.registerBlocks();
+        ModRecipes.registerRecipes();
         // proxy.preInit(event);
         proxy.initRenderers();
     }

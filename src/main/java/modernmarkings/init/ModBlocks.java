@@ -15,13 +15,15 @@ public class ModBlocks {
      * Storing all Mod Blocks in an Array List
      */
     public static final List<Block> BLOCKS = new ArrayList<>();
+    public static final List<Block> FLOOR_BLOCKS = new ArrayList<>();
+    public static final List<Block> WALL_BLOCKS = new ArrayList<>();
 
     // spotless:off
+    public static final Block FLOOR_MARKING_EXIT = new MarkingFloor("floor_marking_exit", "marking_exit");
     public static final Block FLOOR_MARKING_BLACK_SINGLELINE = new MarkingFloor("floor_marking_black_singleline", "marking_black_singleline");
     public static final Block FLOOR_MARKING_BLUE_SINGLELINE = new MarkingFloor("floor_marking_blue_singleline", "marking_blue_singleline");
     public static final Block FLOOR_MARKING_DANGER_RED = new MarkingFloor("floor_marking_danger_red", "marking_danger_red");
     public static final Block FLOOR_MARKING_DANGER_YELLOW = new MarkingFloor("floor_marking_danger_yellow", "marking_danger_yellow");
-    public static final Block FLOOR_MARKING_EXIT = new MarkingFloor("floor_marking_exit", "marking_exit");
     public static final Block FLOOR_MARKING_GREEN_SINGLELINE = new MarkingFloor("floor_marking_green_singleline", "marking_green_singleline");
     public static final Block FLOOR_MARKING_NOENTRY = new MarkingFloor("floor_marking_noentry", "marking_noentry");
     public static final Block FLOOR_MARKING_NOSTEP = new MarkingFloor("floor_marking_nostep", "marking_nostep");
@@ -43,6 +45,7 @@ public class ModBlocks {
     public static final Block FLOOR_MARKING_YELLOW_SQUARE = new MarkingFloor("floor_marking_yellow_square", "marking_yellow_square");
     public static final Block FLOOR_MARKING_YELLOW_STRIPES = new MarkingFloor("floor_marking_yellow_stripes", "marking_yellow_stripes");
 
+    public static final Block WALL_MARKING_EXIT = new MarkingWall("wall_marking_exit", "marking_wall_exit");
     public static final Block WALL_MARKING_NUMBER_0 = new MarkingWall("wall_marking_number_0", "marking_number_0");
     public static final Block WALL_MARKING_NUMBER_1 = new MarkingWall("wall_marking_number_1", "marking_number_1");
     public static final Block WALL_MARKING_NUMBER_2 = new MarkingWall("wall_marking_number_2", "marking_number_2");
@@ -74,7 +77,6 @@ public class ModBlocks {
     public static final Block WALL_MARKING_WARNING_DANGER = new MarkingWall("wall_marking_warning_danger", "marking_wall_warning_danger");
     public static final Block WALL_MARKING_ARROWLEFT = new MarkingWall("wall_marking_arrowleft", "marking_wall_arrowleft");
     public static final Block WALL_MARKING_ARROWRIGHT = new MarkingWall("wall_marking_arrowright", "marking_wall_arrowright");
-    public static final Block WALL_MARKING_EXIT = new MarkingWall("wall_marking_exit", "marking_wall_exit");
     public static final Block WALL_MARKING_HAZARDLINE_LEFT = new MarkingWall("wall_marking_hazardline_left", "marking_wall_hazardline_left");
     public static final Block WALL_MARKING_HAZARDLINE_RIGHT = new MarkingWall("wall_marking_hazardline_right", "marking_wall_hazardline_right");
 
