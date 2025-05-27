@@ -20,26 +20,21 @@ public class MarkingWallRenderer implements ISimpleBlockRenderingHandler {
 
     @Override
     public void renderInventoryBlock(Block block, int metadata, int modelID, RenderBlocks renderer) {
-        // Bind the block texture map
         Minecraft.getMinecraft()
             .getTextureManager()
             .bindTexture(TextureMap.locationBlocksTexture);
 
         Tessellator tessellator = Tessellator.instance;
 
-        // Begin drawing quads
         tessellator.startDrawingQuads();
 
-        // Get the icon for a particular side (0 used here)
         IIcon icon = block.getIcon(0, metadata);
 
-        // Grab the min/max U/V from the icon
         float uMin = icon.getMinU();
         float uMax = icon.getMaxU();
         float vMin = icon.getMinV();
         float vMax = icon.getMaxV();
 
-        // Translate and rotate if necessary.
         // For a flat quad, we draw in the X-Y plane at Z=0.
         GL11.glPushMatrix();
         // Center the quad at the origin
@@ -59,9 +54,6 @@ public class MarkingWallRenderer implements ISimpleBlockRenderingHandler {
     public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block, int modelId,
         RenderBlocks renderer) {
         int meta = world.getBlockMetadata(x, y, z);
-        // Decide which side the block is attached to, then set appropriate bounds.
-        // For example, if meta==2 (north) you want to render only on that face:
-
         switch (meta) {
             case 2: // north
                 renderer.setRenderBounds(0.0, 0.0, 0.9999, 1.0, 1.0, 1.0);
@@ -79,9 +71,6 @@ public class MarkingWallRenderer implements ISimpleBlockRenderingHandler {
                 return false; // If metadata is unexpected, don’t render.
         }
 
-        // Now, obtain the icon from the block using getIcon().
-        // You can choose the face you want to render; typically, pick the face that's exposed.
-        // For example:
         IIcon icon = block.getIcon(getRenderSide(meta), meta);
 
         // Tell the renderer to use this icon when rendering.
@@ -91,20 +80,9 @@ public class MarkingWallRenderer implements ISimpleBlockRenderingHandler {
         return rendered;
     }
 
-    /**
-     * Returns the block face (side) that should be used for the texture.
-     * For example, if the block is attached to a wall, you might want the
-     * texture of the face that attaches to the wall.
-     *
-     * @param metadata the block metadata (which you set in onBlockPlaced)
-     * @return a side index between 0 and 5
-     */
     private int getRenderSide(int metadata) {
         // Here we assume metadata is the same as the side (2, 3, 4, or 5),
         // which you set when the block is placed.
-        // You might choose to force a specific side; for example, if a wall sign
-        // always draws its "front" face.
-        // In this example, simply return metadata.
         return metadata;
     }
 
@@ -115,7 +93,6 @@ public class MarkingWallRenderer implements ISimpleBlockRenderingHandler {
 
     @Override
     public int getRenderId() {
-        // Return the same render ID as you used in your block.
         return ModernMarkings.proxy.renderMarkingWallID;
     }
 }

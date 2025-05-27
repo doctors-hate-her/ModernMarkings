@@ -21,29 +21,24 @@ public class MarkingFloorRenderer implements ISimpleBlockRenderingHandler {
     @Override
     @SideOnly(Side.CLIENT)
     public void renderInventoryBlock(Block block, int metadata, int modelID, RenderBlocks renderer) {
-        // Bind the block texture map
         Minecraft.getMinecraft()
             .getTextureManager()
             .bindTexture(TextureMap.locationBlocksTexture);
 
         Tessellator tessellator = Tessellator.instance;
 
-        // Begin drawing quads
         tessellator.startDrawingQuads();
 
-        // Get the icon for a particular side (0 used here)
         IIcon icon = block.getIcon(0, metadata);
 
-        // Grab the min/max U/V from the icon
         float uMin = icon.getMinU();
         float uMax = icon.getMaxU();
         float vMin = icon.getMinV();
         float vMax = icon.getMaxV();
 
-        // Translate and rotate if necessary.
         // For a flat quad, we draw in the X-Y plane at Z=0.
         GL11.glPushMatrix();
-        // Center the quad at the origin
+
         GL11.glTranslatef(0.1F, 0.5F, 0);
 
         // Draw a quad from (0,0) to (1,1)
@@ -64,12 +59,8 @@ public class MarkingFloorRenderer implements ISimpleBlockRenderingHandler {
 
         renderer.setRenderBounds(0.0, 0.0, 0.0, 1.0, 0.0001, 1.0);
 
-        // Now, obtain the icon from the block using getIcon().
-        // You can choose the face you want to render; typically, pick the face that's exposed.
-        // For example:
         IIcon icon = block.getIcon(getRenderSide(meta), meta);
 
-        // Tell the renderer to use this icon when rendering.
         renderer.overrideBlockTexture = icon;
         renderer.uvRotateTop = meta % 4;
         boolean rendered = renderer.renderStandardBlock(block, x, y, z);
@@ -80,9 +71,6 @@ public class MarkingFloorRenderer implements ISimpleBlockRenderingHandler {
     private int getRenderSide(int metadata) {
         // Here we assume metadata is the same as the side (2, 3, 4, or 5),
         // which you set when the block is placed.
-        // You might choose to force a specific side; for example, if a wall sign
-        // always draws its "front" face.
-        // In this example, simply return metadata.
         return metadata;
     }
 
@@ -93,7 +81,6 @@ public class MarkingFloorRenderer implements ISimpleBlockRenderingHandler {
 
     @Override
     public int getRenderId() {
-        // Return the same render ID as you used in your block.
         return ModernMarkings.proxy.renderMarkingFloorID;
     }
 }

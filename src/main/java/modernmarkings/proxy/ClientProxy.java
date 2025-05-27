@@ -8,14 +8,10 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void initRenderers() {
-        // Get the next available render ID.
         renderMarkingWallID = RenderingRegistry.getNextAvailableRenderId();
-        // Register the custom renderer.
         RenderingRegistry.registerBlockHandler(new MarkingWallRenderer());
 
-        // Get the next available render ID.
         renderMarkingFloorID = RenderingRegistry.getNextAvailableRenderId();
-        // Register the custom renderer.
         RenderingRegistry.registerBlockHandler(new MarkingFloorRenderer());
     }
 }
