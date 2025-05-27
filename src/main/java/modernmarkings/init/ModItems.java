@@ -3,7 +3,7 @@ package modernmarkings.init;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import modernmarkings.items.ItemBase;
