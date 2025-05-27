@@ -2,12 +2,16 @@ package modernmarkings.blocks;
 
 import static modernmarkings.init.ModBlocks.WALL_BLOCKS;
 
+import net.minecraft.block.Block;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import net.minecraftforge.common.util.ForgeDirection;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import modernmarkings.ModernMarkings;
+import modernmarkings.init.ModRenderers;
 
 public class MarkingWall extends BlockBase {
 
@@ -24,13 +28,37 @@ public class MarkingWall extends BlockBase {
 
     @Override
     public int onBlockPlaced(World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ, int meta) {
-        // Only allow placement on wall sides. If placed on top or bottom, default
-        // to north (metadata 2) or you can adjust as needed.
-        if (side == 0 || side == 1) {
-            return 2;
+        // Only allow placement on wall sides.
+        // If placed on top or bottom, continue to calculation with yaw.
+        // The metadata is based on the ForgeDirection enum.
+        // 0 = DOWN, 1 = UP, 2 = NORTH
+        // 3 = SOUTH, 4 = EAST, 5 = WEST
+        if (side != 0 && side != 1) {
+            return side;
         }
-        // Save the chosen facing into metadata.
-        return side;
+        return getDirectionFromPlacedPlayer(world, x, y, z);
+    }
+
+    private int getDirectionFromPlacedPlayer(World world, int x, int y, int z) {
+        EntityPlayer player = world.getClosestPlayer(x, y, z, -1);
+        float yaw = player.rotationYaw % 360.0F;
+        if (yaw < 0.0F) {
+            yaw += 360.0F;
+        }
+
+        int rotation = MathHelper.floor_double((yaw * 4.0F / 360.0F) + 0.5D) & 3;
+        switch (rotation) {
+            case 0:
+                return 3;
+            case 1:
+                return 4;
+            case 2:
+                return 2;
+            case 3:
+                return 5;
+        }
+        // Unreachable since we are & 0b11-ing rotation
+        throw new RuntimeException("rotation wasn't 0<x<4 " + rotation);
     }
 
     @SideOnly(Side.CLIENT)
@@ -89,7 +117,34 @@ public class MarkingWall extends BlockBase {
     @Override
     @SideOnly(Side.CLIENT)
     public int getRenderType() {
-        // Return the custom render ID you registered in your client proxy.
-        return ModernMarkings.proxy.renderMarkingWallID;
+        return ModRenderers.renderMarkingWallID;
     }
+
+    @Override
+    public boolean canPlaceBlockAt(World world, int x, int y, int z) {
+        // Ensure the placement is valid per normal block rules
+        if (!super.canPlaceBlockAt(world, x, y, z)) {
+            return false;
+        }
+        int direction = getDirectionFromPlacedPlayer(world, x, y, z);
+
+        ForgeDirection dir = ForgeDirection.getOrientation(direction);
+        return world.isSideSolid(x + dir.offsetX, y, z + dir.offsetZ, dir, false);
+    }
+
+    @Override
+    public void onNeighborBlockChange(World world, int x, int y, int z, Block neighbor) {
+        int meta = world.getBlockMetadata(x, y, z);
+
+        // I have no idea why .getOpposite is required here when it's not in canPlaceBlockAt,
+        // but it works like this
+        ForgeDirection dir = ForgeDirection.getOrientation(meta)
+            .getOpposite();
+        if (!world.isSideSolid(x + dir.offsetX, y, z + dir.offsetZ, dir, false)) {
+            world.setBlockToAir(x, y, z);
+            this.dropBlockAsItem(world, x, y, z, 0, 0);
+        }
+        super.onNeighborBlockChange(world, x, y, z, neighbor);
+    }
+
 }

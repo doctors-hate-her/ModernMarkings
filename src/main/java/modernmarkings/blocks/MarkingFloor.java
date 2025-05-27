@@ -2,6 +2,7 @@ package modernmarkings.blocks;
 
 import static modernmarkings.init.ModBlocks.FLOOR_BLOCKS;
 
+import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
@@ -10,7 +11,7 @@ import net.minecraft.world.World;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import modernmarkings.ModernMarkings;
+import modernmarkings.init.ModRenderers;
 
 public class MarkingFloor extends BlockBase {
 
@@ -33,8 +34,7 @@ public class MarkingFloor extends BlockBase {
     @Override
     @SideOnly(Side.CLIENT)
     public int getRenderType() {
-        // Return the custom render ID you registered in your client proxy.
-        return ModernMarkings.proxy.renderMarkingFloorID;
+        return ModRenderers.renderMarkingFloorID;
     }
 
     @Override
@@ -65,7 +65,28 @@ public class MarkingFloor extends BlockBase {
                 meta = 0;
                 break;
         }
-        worldIn.setBlockMetadataWithNotify(x, y, z, meta, 2);
+        worldIn.setBlockMetadataWithNotify(x, y, z, meta, 3);
+    }
+
+    @Override
+    public boolean canPlaceBlockAt(World world, int x, int y, int z) {
+        // Ensure the placement is valid per normal block rules
+        if (!super.canPlaceBlockAt(world, x, y, z)) {
+            return false;
+        }
+
+        // Check that the block below is solid and not air.
+        return World.doesBlockHaveSolidTopSurface(world, x, y - 1, z);
+    }
+
+    @Override
+    public void onNeighborBlockChange(World world, int x, int y, int z, Block neighbor) {
+        // If the block below is no longer solid, drop the block as an item and remove it.
+        if (!World.doesBlockHaveSolidTopSurface(world, x, y - 1, z)) {
+            world.setBlockToAir(x, y, z);
+            this.dropBlockAsItem(world, x, y, z, 0, 0);
+        }
+        super.onNeighborBlockChange(world, x, y, z, neighbor);
     }
 
 }
