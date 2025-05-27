@@ -6,7 +6,9 @@ import org.apache.logging.log4j.Logger;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 import modernmarkings.init.ModBlocks;
+import modernmarkings.init.ModFuelHandler;
 import modernmarkings.init.ModItems;
 import modernmarkings.init.ModTab;
 import modernmarkings.items.ModRecipes;
@@ -30,6 +32,7 @@ public class ModernMarkings {
         ModItems.registerItems();
         ModBlocks.registerBlocks();
         ModRecipes.registerRecipes();
+        GameRegistry.registerFuelHandler(new ModFuelHandler());
         proxy.initRenderers();
     }
 
