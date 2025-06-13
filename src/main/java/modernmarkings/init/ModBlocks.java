@@ -116,6 +116,8 @@ public class ModBlocks {
     public static final Block WALL_MARKING_HAZARDLINE_LEFT = new MarkingWallGeneral("wall_marking_hazardline_left", "marking_wall_hazardline_left");
     public static final Block WALL_MARKING_HAZARDLINE_RIGHT = new MarkingWallGeneral("wall_marking_hazardline_right", "marking_wall_hazardline_right");
     public static final Block WALL_MARKING_HAZARD_DIAMOND = new MarkingWallGeneral("wall_marking_hazard_diamond", "marking_wall_hazard_diamond");
+    public static final Block WALL_MARKING_EXCLAMATION_MARK = new MarkingWallGeneral("wall_marking_exclamation_mark", "marking_wall_exclamation_mark");
+    public static final Block WALL_MARKING_QUESTION_MARK = new MarkingWallGeneral("wall_marking_question_mark", "marking_wall_question_mark");
 
     public static final Block WALL_MARKING_VOLTAGE_EU = new MarkingWallGeneral("wall_marking_voltage_eu", "marking_wall_voltage_eu");
     public static final Block WALL_MARKING_VOLTAGE_EV = new MarkingWallGeneral("wall_marking_voltage_ev", "marking_wall_voltage_ev");
