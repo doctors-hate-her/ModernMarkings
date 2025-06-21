@@ -102,6 +102,16 @@ tile.wall_marking_hazard_diamond.name=Hazard Diamond Wall Marking
 tile.wall_marking_exclamation_mark.name=Exclamation Mark Wall Marking
 tile.wall_marking_question_mark.name=Question Mark Wall Marking
 
+tile.wall_marking_corrosive.name=Corrosive Wall Marking
+tile.wall_marking_health_hazard.name=Health Hazard Wall Marking
+tile.wall_marking_skull_crossbones.name=Danger Wall Marking
+tile.wall_marking_warning.name=Warning Wall Marking
+tile.wall_marking_ppe_boots.name=PPE Boots Wall Marking
+tile.wall_marking_ppe_glasses.name=PPE Glasses Wall Marking
+tile.wall_marking_ppe_highvis.name=PPE Highvis Wall Marking
+tile.wall_marking_ppe_mask.name=PPE Mask Wall Marking
+tile.wall_marking_ppe_suit.name=PPE Suit Wall Marking
+
 tile.wall_marking_voltage_lv.name=Low Voltage Wall Marking
 tile.wall_marking_voltage_mv.name=Medium Voltage Wall Marking
 tile.wall_marking_voltage_hv.name=High Voltage Wall Marking
@@ -156,6 +166,7 @@ tile.wall_marking_flag_intersex.name=Intersex Pride Flag Marking
 tile.wall_marking_flag_nonbinary.name=Nonbinary Pride Flag Marking
 tile.wall_marking_flag_pansexual.name=Pansexual Pride Flag Marking
 tile.wall_marking_flag_polyamory.name=Polyamory Pride Flag Marking
+tile.wall_marking_flag_polyamory_new.name=New Polyamory Pride Flag Marking
 tile.wall_marking_flag_progressive.name=Progressive Pride Flag Marking
 tile.wall_marking_flag_pride.name=Gay Pride Flag Marking
 tile.wall_marking_flag_sappphic.name=Sapphic Pride Flag Marking

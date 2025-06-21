@@ -118,6 +118,15 @@ public class ModBlocks {
     public static final Block WALL_MARKING_HAZARD_DIAMOND = new MarkingWallGeneral("wall_marking_hazard_diamond", "marking_wall_hazard_diamond");
     public static final Block WALL_MARKING_EXCLAMATION_MARK = new MarkingWallGeneral("wall_marking_exclamation_mark", "marking_wall_exclamation_mark");
     public static final Block WALL_MARKING_QUESTION_MARK = new MarkingWallGeneral("wall_marking_question_mark", "marking_wall_question_mark");
+    public static final Block WALL_MARKING_CORROSIVE = new MarkingWallGeneral("wall_marking_corrosive", "marking_corrosive");
+    public static final Block WALL_MARKING_HEALTH_HAZARD = new MarkingWallGeneral("wall_marking_health_hazard", "marking_health_hazard");
+    public static final Block WALL_MARKING_SKULL_CROSSBONES = new MarkingWallGeneral("wall_marking_skull_crossbones", "marking_skull_crossbones");
+    public static final Block WALL_MARKING_WARNING = new MarkingWallGeneral("wall_marking_warning", "marking_warning");
+    public static final Block WALL_MARKING_PPE_BOOTS = new MarkingWallGeneral("wall_marking_ppe_boots", "marking_ppe_boots");
+    public static final Block WALL_MARKING_PPE_GLASSES = new MarkingWallGeneral("wall_marking_ppe_glasses", "marking_ppe_glasses");
+    public static final Block WALL_MARKING_PPE_HIGHVIS = new MarkingWallGeneral("wall_marking_ppe_highvis", "marking_ppe_highvis");
+    public static final Block WALL_MARKING_PPE_MASK = new MarkingWallGeneral("wall_marking_ppe_mask", "marking_ppe_mask");
+    public static final Block WALL_MARKING_PPE_SUIT = new MarkingWallGeneral("wall_marking_ppe_suit", "marking_ppe_suit");
 
     public static final Block WALL_MARKING_VOLTAGE_EU = new MarkingWallGeneral("wall_marking_voltage_eu", "marking_wall_voltage_eu");
     public static final Block WALL_MARKING_VOLTAGE_EV = new MarkingWallGeneral("wall_marking_voltage_ev", "marking_wall_voltage_ev");
@@ -173,6 +182,7 @@ public class ModBlocks {
     public static final Block WALL_MARKING_FLAG_PANSEXUAL = new MarkingFlag("wall_marking_flag_pansexual", "marking_flag_pansexual");
     public static final Block WALL_MARKING_FLAG_PRIDE = new MarkingFlag("wall_marking_flag_pride", "marking_flag_pride");
     public static final Block WALL_MARKING_FLAG_POLYAMORY = new MarkingFlag("wall_marking_flag_polyamory", "marking_flag_polyamory");
+    public static final Block WALL_MARKING_FLAG_POLYAMORY_NEW = new MarkingFlag("wall_marking_flag_polyamory_new", "marking_flag_polyamory_new");
     public static final Block WALL_MARKING_FLAG_PROGRESSIVE = new MarkingFlag("wall_marking_flag_progressive", "marking_flag_progressive");
     public static final Block WALL_MARKING_FLAG_SAPPHIC = new MarkingFlag("wall_marking_flag_sapphic", "marking_flag_sapphic");
     public static final Block WALL_MARKING_FLAG_TRANS = new MarkingFlag("wall_marking_flag_trans", "marking_flag_trans");
