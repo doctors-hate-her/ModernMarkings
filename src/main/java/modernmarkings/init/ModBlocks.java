@@ -266,6 +266,7 @@ public class ModBlocks {
     public static final Block WALL_MARKING_FLAG_VINCIAN = new MarkingFlag("wall_marking_flag_vincian", "marking_flag_vincian");
     public static final Block WALL_MARKING_FLAG_GTNH = new MarkingFlag("wall_marking_flag_gtnh", "marking_flag_GTNH");
 
+    public static final Block WALL_MARKING_PRESSURIZED_AREA = new MarkingWallGeneral("wall_marking_pressurized_area", "pressurized_area-32x");
 
     // spotless:on
 

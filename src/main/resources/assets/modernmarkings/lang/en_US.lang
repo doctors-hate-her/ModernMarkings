@@ -243,3 +243,5 @@ tile.wall_marking_flag_pride.name=Gay Pride Flag Marking
 tile.wall_marking_flag_sappphic.name=Sapphic Pride Flag Marking
 tile.wall_marking_flag_trans.name=Trans Pride Flag Marking
 tile.wall_marking_flag_vincian.name=Vincian Pride Flag Marking
+
+tile.wall_marking_pressurized_area.name=Pressurized Area Wall Marking
